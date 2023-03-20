@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="./css/normalize.css">
+ <link rel="stylesheet" href="./css/preview.css">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+ <title>Adham Builder Live Preview</title>
+</head>
+<body>
+ <div class="popup-content">
+  <div class="container">
+   <div class="element option">
+    <h3>What is the element</h3>
+    <div class="option-buttons">
+     <button class="option-button" data-ele="popup">Popup</button>
+     <button class="option-button" data-ele="header">Header</button>
+     <button class="option-button" data-ele="navigation">
+      Navigation
+     </button>
+     <button class="option-button" data-ele="scroll" >Scroll To Top</button>
+     <button class="option-button" data-ele="others">others</button>
+    </div>
+    <span>what is the type of element you want to build</span>
+   </div>
+   <div class="func-opt option">
+    <h3>Suggested Functionality</h3>
+    <div class="option-buttons">
+     <button class="option-button" data-sugfun="scroll-to-top">Scroll To Top</button>
+     <!-- <button class="option-button" data-sugfun="no">No</button> -->
+    </div>
+   </div>
+   <div class="width option">
+    <h3>Width</h3>
+    <input
+     type="text"
+     class="number e-option direct-rules"
+     id="width"
+     data-property="width"
+     value="200px"
+    />
+    <span>You can set it in px or % "400px" or "60%"</span>
+   </div>
+   <div class="height option">
+    <h3>Height</h3>
+    <input
+     type="text"
+     class="number e-option direct-rules"
+     id="height"
+     data-property="height"
+     value="200px"
+    />
+    <span>You can set it in px or % "400px" or "60%"</span>
+   </div>
+   <div class="transition option">
+    <h3>Transition</h3>
+    <input
+     type="text"
+     class="direct-rules"
+     id="transition"
+     data-property="transition"
+     value="0"
+    />
+    <span
+     >The time that popup take to appear or disappear in seconds,</span
+    ><span> set it in seconds "3s","10s"</span>
+   </div>
+   <div class="background-color option">
+    <h3>Background Color</h3>
+    <input
+     type="text"
+     id="background-color"
+     class="direct-rules"
+     data-property="background-color"
+     value="black"
+    />
+    <span>Try To Add "blue" or hex color code</span>
+   </div>
+   <div class="text-color option">
+    <h3>Text Color</h3>
+    <input
+     type="text"
+     class="direct-rules"
+     id="text-color"
+     data-property="color"
+     value="white"
+    />
+    <span>Try To Add "blue" or hex color code</span>
+   </div>
+   <div class="overlay-opt option">
+    <h3>Overlay</h3>
+    <div class="option-buttons">
+     <button class="option-button" data-overlay="yes">Yes</button>
+     <button class="option-button" data-overlay="no">No</button>
+    </div>
+   </div>
+   <div class="opacity-level option">
+    <h3>Overlay Opacity Level</h3>
+    <input
+     type="text"
+     class="direct-rules"
+     id="opacity-level"
+     data-property="opacity"
+     value="0"
+    />
+    <span>from 0 to 1, set it with l "0.4l, 0.8l, 0.2l"</span>
+   </div>
+   <div class="top option">
+    <h3>Top</h3>
+    <input
+     type="text"
+     class="number e-option"
+     id="top"
+     data-property="top"
+     value="50%"
+    />
+    <span>You can set it in px or % "400px" or "60%"</span>
+   </div>
+   <div class="left option">
+    <h3>Left</h3>
+    <input
+     type="text"
+     class="number e-option"
+     id="left"
+     data-property="left"
+     value="50%"
+    />
+    <span>You can set it in px or % "400px" or "60%"</span>
+   </div>
+   <div class="centering-opt option">
+    <h3>Center</h3>
+    <div class="option-buttons">
+     <button class="option-button" data-center="yes">Yes</button>
+     <button class="option-button" data-center="no">No</button>
+    </div>
+    <span>To center the element you need to set top and left 50%</span>
+   </div>
+
+   <div class="appear-reason option">
+    <h3>Appear Reason</h3>
+    <div class="option-buttons">
+     <button class="option-button" data-appear="start-time">
+      Start Time
+     </button>
+     <button class="option-button" data-appear="onclick">
+      On Click
+     </button>
+     <button class="option-button" data-appear="static">Static</button>
+    </div>
+    <span>The Reason to make the popup appear</span>
+   </div>
+
+   <div class="start-time option">
+    <h3>Time To Start The Popup</h3>
+    <input type="number" id="show-the-popup" />
+    <span class="im">When popup appear in seconds</span>
+   </div>
+   <div class="onclick option">
+    <h3>Appear Classes</h3>
+    <span class="appear-class">adham-btn adham-show</span>
+    <span>Add The Classes To The Element That Make The Popup Appear</span>
+   </div>
+   <div class="disappear-reason option">
+    <h3>Disappear Reason</h3>
+    <div class="option-buttons">
+     <button class="option-button" data-disappear="end-time">
+      End Time
+     </button>
+     <button class="option-button" data-disappear="onclick">
+      On Click
+     </button>
+    </div>
+    <span>The Reason to make the popup appear</span>
+   </div>
+   <div class="end-time option">
+    <h3>Time To End The Popup</h3>
+    <input type="number" id="hidden-the-popup" />
+    <span class="im">When popup disappear in seconds</span>
+   </div>
+   <div class="onclick-to-end option">
+    <h3>Disapear Classes</h3>
+    <span class="disappear-class">adham-btn adham-hidden</span>
+    <span
+     >Add The Classes To The Element That Make The Popup disappear</span
+    >
+   </div>
+   <div class="effect option">
+    <h3>Show Effects</h3>
+    <div class="option-buttons">
+     <button class="option-button" data-show="fade-in">Fade IN</button>
+     <button class="option-button" data-show="slide-down">
+      Slide Down
+     </button>
+     <button class="option-button" data-show="slide-up">Slide Up</button>
+     <button class="option-button" data-show="slide-left">
+      Slide Left
+     </button>
+     <button class="option-button" data-show="slide-right">
+      Slide Right
+     </button>
+    </div>
+    <span>Default Is Fade In</span>
+    <span>Static elements don't have show effect</span>
+   </div>
+   <div class="adham-content option">
+    <h3>Content</h3>
+    <div class="content-preview"></div>
+    <textarea id="content" class="e-option tarea" data-property="content" value=""></textarea>
+    <span>The content of the element</span>
+    <div class="path-ext">
+     <input
+     type="text"
+     class="e-option path"
+     data-property="path"
+     value=""
+    />
+    <span>The path or The Url</span>
+    </div>
+    <div class="option-buttons main-buttons">
+      <button class="option-button" data-cont="h1">H1</button>
+      <button class="option-button" data-cont="h2">H2</button>
+      <button class="option-button" data-cont="h3">H3</button>
+      <button class="option-button" data-cont="a">Link</button>
+      <button class="option-button" data-cont="img">image</button>
+      <button class="option-button" data-cont="ul">UnOrdered List (ul)</button>
+      <button class="option-button contentType" data-cont="p">Text</button>
+      <button class="option-button" data-cont="div">Container (div)</button>
+    </div>
+    <div class="option-buttons">
+     <button class="option-button" data-app="rem">Remove</button>
+     <button class="option-button" data-app="add">Add</button>
+    </div>
+   </div>
+   <div class="ul-content option">
+    <h3>The Elements (li) Will Be Appended To The ul</h3>
+    <div class="ul-content-preview"></div>
+    <textarea id="ul-content" class="e-option tarea" data-property="ul-content" value=""></textarea>
+    <span>Element (li) Will Be Appended To The ul</span>
+    <div class="ul-path-ext">
+     <input
+     type="text"
+     class="e-option ul-path"
+     data-property="ul-path"
+     value=""
+    />
+    <span>The The Url</span>
+    </div>
+    <div class="option-buttons ul-buttons">
+     <div class="option-buttons ul-links">
+      <button class="option-button" data-ullink="have">li have link</button>
+      <button class="option-button" data-ullink="don'thave">li don't have link</button>
+     </div>
+     <hr>
+      <button class="option-button" data-ulcont="li">li</button>
+      <hr>
+    </div>
+    <div class="option-buttons">
+     <button class="option-button" data-ulapp="rem">Remove</button>
+     <button class="option-button" data-ulapp="add">Add</button>
+    </div>
+   </div>
+   <div class="div-container option">
+    <h3>Element Will Be Appended To The Div</h3>
+    <div class="div-content-preview"></div>
+    <textarea id="div-content" class="e-option tarea" data-property="div-content" value=""></textarea>
+    <span>Element Will Be Appended To The Div</span>
+    <div class="div-path-ext">
+     <input
+     type="text"
+     class="e-option div-path"
+     data-property="div-path"
+     value=""
+    />
+    <span>The path or The Url</span>
+    </div>
+    <div class="option-buttons div-buttons">
+      <button class="option-button" data-divcont="h1">H1</button>
+      <button class="option-button" data-divcont="h2">H2</button>
+      <button class="option-button" data-divcont="h3">H3</button>
+      <button class="option-button" data-divcont="a">Link</button>
+      <button class="option-button" data-divcont="img">image</button>
+      <button class="option-button contentType" data-divcont="p">Text</button>
+    </div>
+    <div class="option-buttons">
+     <button class="option-button" data-divapp="rem">Remove</button>
+     <button class="option-button" data-divapp="add">Add</button>
+    </div>
+   </div>
+  </div>
+  <div class="advanced-options">
+   <div class="show-btn"><</div>
+   <h2>Advanced Styling</h2>
+   <div class="main-container">
+    <div class="radius option">
+     <h3>Border-radius</h3>
+     <input
+      type="text"
+      class="number e-option direct-rules"
+      id="border-radius"
+      data-property="border-radius"
+      value=""
+     />
+     <span>You can set it in px or % "20px" or "5%"</span>
+    </div>
+    <div class="position option">
+     <h3>The Position Of The Element</h3>
+     <select
+      type="text"
+      class="number e-option direct-rules"
+      id="position"
+      data-property="position"
+      value=""
+     >
+    <option value="fixed">auto (fixed)</option>
+    <option value="relative">relative</option>
+    <option value="absolute">absolute</option>
+    </select>
+     <span>It Will Be Explained In The Documentation</span>
+    </div>
+    <div class="order option">
+     <h3>Content Order</h3>
+     <select
+      type="text"
+      class="number e-option container-rules"
+      id="order"
+      data-property="display"
+      value=""
+     >
+    <option value="">Columns</option>
+    <option value="flex">Rows</option>
+    </select>
+     <span>How The Elements Will Be Ordered</span>
+    </div>
+    <div class="justify option">
+     <h3>Where The empty space will be distributed</h3>
+     <select
+      type="text"
+      class="number e-option container-rules"
+      id="justify-content"
+      data-property="justify-content"
+      value=""
+     >
+    <option value="">Auto</option>
+    <option value="space-between">Between The Elements</option>
+    <option value="space-around">Around The Elements</option>
+    </select>
+     <span>Where To place the Free Space Around And Between The Elements</span>
+    </div>
+    <div class="align option">
+     <h3>Make The Items Aligned</h3>
+     <select
+      type="text"
+      class="number e-option container-rules"
+      id="align-items"
+      data-property="align-items"
+      value=""
+     >
+    <option value="center">aligned</option>
+    <option value="">Not aligned</option>
+    </select>
+     <span>Make the Items of the row aligned</span>
+    </div>
+    <div class="text-align option">
+     <h3>Text Position</h3>
+     <select
+      type="text"
+      class="number e-option container-rules"
+      id="text-align"
+      data-property="text-align"
+      value=""
+     >
+    <option value="left">Left</option>
+    <option value="Center">Center</option>
+    <option value="right">Right</option>
+    </select>
+     <span>How The Text Will Be Positioned horizontal</span>
+    </div>
+    <div class="centering-cont option">
+     <h3>Center The Content Inside The Element</h3>
+     <div class="option-buttons">
+      <button class="option-button" data-centerCont="vertical">vertical</button>
+      <button class="option-button" data-centerCont="centerAll">vertical and horizontal</button>
+      <button class="option-button" data-centerCont="noCentering">No Center</button>
+     </div>
+     <span>How To Center The Elements Inside The Main Element</span>
+    </div>
+    <div class="cont-margin option">
+     <h3>Add Distance Around The container of the element (margin)</h3>
+     <input
+      type="text"
+      class="number e-option container-rules"
+      id="cont-margin"
+      data-property="margin"
+      value=""
+     />
+     <span>You can set it in px or % "15px" or "10%"</span>
+    </div>
+    <div class="margin option">
+     <h3>Add Distance Around The Elements That Will Be Inside The Main Element (margin)</h3>
+     <input
+      type="text"
+      class="number e-option childs-rules"
+      id="margin"
+      data-property="margin"
+      value=""
+     />
+     <span>You can set it in px or % "15px" or "10%"</span>
+    </div>
+    <div class="padding option">
+     <h3>Add Distance Inside The Elements (padding)</h3>
+     <input
+      type="text"
+      class="number e-option childs-rules"
+      id="padding"
+      data-property="padding"
+      value=""
+     />
+     <span>You can set it in px or % "10px" or "10%"</span>
+    </div>
+    <hr>
+    <h2>Links Style</h2>
+    <div class="text-decoration option">
+     <h3>The Line Of The Link</h3>
+     <select
+      type="text"
+      class="number e-option a-rules"
+      id="text-decoration"
+      data-property="text-decoration"
+      value=""
+     >
+     <option value="">No Remove</option>
+    <option value="none">Remove</option>
+    </select>
+     <span>If The Link Will Have A Line lowest it</span>
+    </div>
+    <div class="a-background option">
+     <h3>The Background Color Of The Link</h3>
+     <input
+      type="text"
+      class="number e-option a-rules"
+      id="a-background"
+      data-property="background-color"
+     />
+    </div>
+    <div class="a-color option">
+     <h3>The Color Of The Link</h3>
+     <input
+      type="text"
+      class="number e-option a-rules"
+      id="a-color"
+      data-property="color"
+     />
+    </div>
+    <div class="a-fontSize option">
+     <h3>The Font Size Of The Link</h3>
+     <input
+      type="text"
+      class="number e-option a-rules"
+      id="a-fontSize"
+      data-property="font-size"
+     />
+     <span>The Size Of the Link Text, You can set it in px "18px"</span>
+    </div>
+    <div class="a-fontWeight option">
+     <h3>The Font Weight Of The Link</h3>
+     <select
+      type="text"
+      class="number e-option a-rules"
+      id="a-fontWeight"
+      data-property="font-weight"
+     >
+     <option value="normal">normal</option>
+    <option value="light">Light</option>
+    <option value="bold">Bold</option>
+    </select>
+     <span>The Weight Of The Link Text</span>
+    </div>
+    <div class="a-margin option">
+     <h3>The margin Of The Link</h3>
+     <input
+      type="text"
+      class="number e-option a-rules"
+      id="a-margin"
+      data-property="margin"
+     />
+     <span>You can set it in px or % "20px" or "10%"</span>
+    </div>
+    <hr>
+    <h2>Text Style</h2>
+    <div class="p-background option">
+     <h3>The Background Color Of The Text</h3>
+     <input
+      type="text"
+      class="number e-option p-rules"
+      id="p-background"
+      data-property="background-color"
+     />
+    </div>
+    <div class="p-color option">
+     <h3>The Color Of The Text</h3>
+     <input
+      type="text"
+      class="number e-option p-rules"
+      id="p-color"
+      data-property="color"
+     />
+    </div>
+    <div class="p-fontSize option">
+     <h3>The Font Size Of The Text</h3>
+     <input
+      type="text"
+      class="number e-option p-rules"
+      id="p-fontSize"
+      data-property="font-size"
+     />
+     <span>You can set it in px or % "18px"</span>
+    </div>
+    <div class="p-fontWeight option">
+     <h3>The Font Weight Of The Text</h3>
+     <select
+      type="text"
+      class="number e-option p-rules"
+      id="p-fontWeight"
+      data-property="font-weight"
+     >
+    <option value="normal">normal</option>
+    <option value="light">Light</option>
+    <option value="bold">Bold</option>
+    </select>
+     <span>The Weight Of The Text Font</span>
+    </div>
+    <div class="p-line-height option">
+     <h3>Text Line height</h3>
+     <input
+      type="text"
+      class="number e-option p-rules"
+      id="p-line-height"
+      data-property="line-height"
+      value=""
+     />
+     <span>The Height Of The Lines In The Text</span>
+    </div>
+    <div class="p-margin option">
+     <h3>The margin Of The Text</h3>
+     <input
+      type="text"
+      class="number e-option p-rules"
+      id="p-margin"
+      data-property="margin"
+     />
+     <span>You can set it in px or % "10px" or "5%"</span>
+    </div>
+    <hr>
+    <h2>Image Style</h2>
+    <div class="img-width option">
+     <h3>The Width Of The Image</h3>
+     <input
+      type="text"
+      class="number e-option img-rules"
+      id="img-width"
+      data-property="width"
+     />
+     <span>You can set it in px or % "200px" or "100%" (Recomended Width Is 100%)</span>
+    </div>
+    <div class="img-height option">
+     <h3>The height Of The Image</h3>
+     <input
+      type="text"
+      class="number e-option img-rules"
+      id="img-height"
+      data-property="height"
+     />
+     <span>You can set it in px or % "200px" or "100%" (Recomended Height Is 100%)</span>
+    </div>
+    <hr>
+    <h2>ul Style</h2>
+    <div class="ul-listStyle option">
+     <h3>The Style Of The ul has a point(dot)</h3>
+     <select
+      type="text"
+      class="number e-option ul-rules"
+      id="ul-listStyle"
+      data-property="list-style"
+     >
+    <option value="none">Remove</option>
+    <option value="">No Remove</option>
+    </select>
+     <span>Remove Or No Remove To The point Beside The (Li) Of The Ul</span>
+    </div>
+    <div class="ul-order option">
+     <h3>Ul Content Order</h3>
+     <select
+      type="text"
+      class="number e-option ul-rules"
+      id="ul-order"
+      data-property="display"
+      value=""
+     >
+    <option value="">Columns</option>
+    <option value="flex">Rows</option>
+    </select>
+     <span>How The Elements Will Be Ordered</span>
+    </div>
+    <div class="ul-margin option">
+     <h3>Add Distance Around the ul(margin)</h3>
+     <input
+      type="text"
+      class="number e-option ul-rules"
+      id="ul-margin"
+      data-property="margin"
+      value=""
+     />
+     <span>You can set it in px or % "15px" or "10%"</span>
+    </div>
+    <div class="ul-margin option">
+     <h3>The margin for the li inside the ul</h3>
+     <input
+      type="text"
+      class="number e-option li-rules"
+      id="ul-margin"
+      data-property="margin"
+     />
+     <span>You can set it in px or % "15px" or "10%"</span>
+    </div>
+    <div class="ul-padding option">
+     <h3>The padding for the li inside the ul</h3>
+     <input
+      type="text"
+      class="number e-option li-rules"
+      id="ul-padding"
+      data-property="padding"
+     />
+     <span>You can set it in px or % "15px" or "10%"</span>
+    </div>
+    <div class="ul-color option">
+     <h3>The color for the li inside the ul</h3>
+     <input
+      type="text"
+      class="number e-option li-rules"
+      id="ul-color"
+      data-property="color"
+     />
+    </div>
+    <hr>
+    <h2>div Style</h2>
+    <div class="div-order option">
+     <h3>Div Content Order</h3>
+     <select
+      type="text"
+      class="number e-option div-rules"
+      id="div-order"
+      data-property="display"
+      value=""
+     >
+    <option value="">Columns</option>
+    <option value="flex">Rows</option>
+    </select>
+     <span>How The Elements Will Be Ordered</span>
+    </div>
+    <div class="div-background option">
+     <h3>The background color of the div</h3>
+     <input
+      type="text"
+      class="number e-option div-rules"
+      id="div-background"
+      data-property="background-color"
+     />
+    </div>
+    <div class="div-color option">
+     <h3>The color for the elements inside the div</h3>
+     <input
+      type="text"
+      class="number e-option div-rules"
+      id="div-color"
+      data-property="color"
+     />
+    </div>
+    <div class="divtext-align option">
+     <h3>Text Position inside the div</h3>
+     <select
+      type="text"
+      class="number e-option div-rules"
+      id="divtext-align"
+      data-property="text-align"
+      value=""
+     >
+    <option value="left">Left</option>
+    <option value="Center">Center</option>
+    <option value="right">Right</option>
+    </select>
+     <span>How The Text Will Be Positioned Inside The Div</span>
+    </div>
+    <div class="div-margin option">
+     <h3>The margin for the elements inside the div</h3>
+     <input
+      type="text"
+      class="number e-option divchilds-rules"
+      id="div-margin"
+      data-property="margin"
+     />
+     <span>You can set it in px or % "20px" or "10%"</span>
+    </div>
+    <div class="div-padding option">
+     <h3>The padding for the elements inside the div</h3>
+     <input
+      type="text"
+      class="number e-option divchilds-rules"
+      id="div-padding"
+      data-property="padding"
+     />
+     <span>You can set it in px or % "15px" or "10%"</span>
+    </div>
+   </div>
+   </div>
+  <button class="reset">Reset</button>
+  <button class="adham-show" id="show">Show Popup</button>
+ </div>
+ <div class="inst-popup">
+  <h3>Hello</h3>
+  <p>This Is A live Preview Copy, To Generate The Code Buy The Full Copy</p>
+  <button>Okay</button>
+ </div>
+ <script src="./js/preview.js"></script>
+</body>
+</html>

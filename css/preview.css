@@ -1,0 +1,313 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+:root {
+  --main-color: #00013B;
+}
+
+.popup-content {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  background-color: var(--main-color);
+  padding-bottom: 50px;
+  padding-bottom: 70px;
+}
+.popup-content .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+.popup-content .option {
+  background-color: white;
+  padding: 20px;
+  margin: 12px;
+  text-align: center;
+  border: 1px solid var(--main-color);
+  border-radius: 20px;
+}
+.popup-content .option > h3 {
+  margin: 0 0 10px;
+  color: var(--main-color);
+}
+.popup-content .option input,
+.popup-content .option textarea {
+  border: none;
+  background-color: var(--main-color);
+  padding: 6px;
+  color: white;
+}
+.popup-content .option input:focus,
+.popup-content .option textarea:focus {
+  outline: none;
+}
+.popup-content .option input.unfinished,
+.popup-content .option textarea.unfinished {
+  border: 1px solid red !important;
+}
+.popup-content .option span {
+  display: block;
+  font-size: 14px;
+  font-weight: normal;
+  color: #5a5858;
+  margin-top: 8px;
+}
+.popup-content .option span.im {
+  color: red;
+}
+.popup-content .option .option-buttons {
+  display: grid;
+}
+.popup-content .option .option-buttons .button-container .option-button {
+  width: 100%;
+}
+.popup-content .option button {
+  border: none;
+  padding: 6px 15px;
+  background-color: var(--main-color);
+  color: white;
+  border-radius: 20px;
+  margin: 5px;
+  transition: 0.3s;
+  cursor: pointer;
+  opacity: 0.5;
+}
+.popup-content .option button.active, .popup-content .option button:hover {
+  opacity: 1;
+}
+.popup-content .option button[data-cont=li] {
+  display: none;
+}
+.popup-content .advanced-options {
+  width: 50%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: -50%;
+  background-color: white;
+  transition: 1s;
+}
+.popup-content .advanced-options h2 {
+  color: var(--main-color);
+  text-align: center;
+  margin: 20px;
+}
+.popup-content .advanced-options.showing {
+  right: 0%;
+}
+.popup-content .advanced-options .show-btn {
+  background-color: white;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: -50px;
+  width: 50px;
+  height: 50px;
+  font-weight: bold;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #00013B;
+  cursor: pointer;
+}
+.popup-content .advanced-options .main-container {
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 70px;
+}
+.popup-content .advanced-options .main-container h2 {
+  text-align: center;
+  color: var(--main-color);
+}
+.popup-content .advanced-options .option {
+  margin: 10px;
+}
+.popup-content .adham-show,
+.popup-content .reset {
+  position: absolute;
+  background-color: var(--main-color);
+  color: white;
+  box-shadow: 0 0 20px white;
+  transition: box-shadow 0.6s;
+  padding: 10px 15px;
+  border: 1px solid white;
+  margin: 10px 0 0;
+  border-radius: 20px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.popup-content .adham-show:hover,
+.popup-content .reset:hover {
+  box-shadow: none;
+}
+.popup-content .adham-show {
+  left: 60%;
+  transform: translateX(-50%);
+}
+.popup-content .reset {
+  left: 30%;
+}
+
+.popup {
+  position: fixed;
+  z-index: 10001;
+}
+
+.adham-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: black;
+  z-index: 1000;
+}
+
+.main-overlay {
+  position: fixed;
+  z-index: 10000;
+}
+
+.A {
+  z-index: 100001;
+  position: relative;
+}
+
+.centering {
+  transform: translate(-50%, -50%);
+}
+
+.center-cont-vertical {
+  position: absolute;
+  top: 50%;
+  transform: translate(0%, -50%);
+}
+
+.center-cont-all {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.start-time,
+.onclick,
+.end-time,
+.onclick-to-end,
+.func-opt {
+  display: none;
+}
+.start-time.show-option,
+.onclick.show-option,
+.end-time.show-option,
+.onclick-to-end.show-option,
+.func-opt.show-option {
+  display: block;
+}
+
+.appear-class,
+.disappear-class {
+  font-size: 25px !important;
+  color: black !important;
+}
+
+.tarea {
+  resize: none;
+  width: 225px;
+  height: 100px;
+}
+
+.path-ext,
+.div-path-ext,
+.ul-path-ext {
+  display: none;
+}
+.path-ext .path,
+.path-ext .div-path,
+.path-ext .ul-path-ext,
+.div-path-ext .path,
+.div-path-ext .div-path,
+.div-path-ext .ul-path-ext,
+.ul-path-ext .path,
+.ul-path-ext .div-path,
+.ul-path-ext .ul-path-ext {
+  margin-top: 20px;
+}
+
+.content-preview,
+.div-content-preview {
+  border: 1px solid #777;
+  margin: 10px;
+  padding: 5px;
+}
+.content-preview div,
+.div-content-preview div {
+  width: 95%;
+  display: block;
+}
+.content-preview img,
+.div-content-preview img {
+  width: 100%;
+  height: 100%;
+}
+
+.ul-content-preview {
+  border: 1px solid #777;
+  margin: 10px;
+  padding: 5px;
+}
+
+.div-container,
+.ul-content {
+  display: none;
+}
+
+.inst-popup {
+  position: fixed;
+  bottom: -200px;
+  right: -300px;
+  background-color: var(--main-color);
+  color: white;
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 10px;
+  width: 300px;
+  height: 200px;
+  border-radius: 20px;
+  transition: 1s;
+}
+.inst-popup.active-pop {
+  bottom: 20px;
+  right: 20px;
+}
+.inst-popup p {
+  margin: 15px;
+}
+.inst-popup button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 25px;
+  margin: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 20px;
+  transition: 0.4s;
+  box-shadow: 0 0 8px white;
+}
+.inst-popup button:hover {
+  box-shadow: none;
+}/*# sourceMappingURL=preview.css.map */
